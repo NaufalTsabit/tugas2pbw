@@ -35,8 +35,6 @@ $(function() {
                     $('#success > .alert-success')
                         .append('</div>');
 
-                    //clear all fields
-                    $('#contactForm').trigger("reset");
                 },
                 error: function() {
                     // Fail message
@@ -45,8 +43,7 @@ $(function() {
                         .append("</button>");
                     $('#success > .alert-danger').append("<strong>Sorry " + firstName + ", it seems that my mail server is not responding. Please try again later!");
                     $('#success > .alert-danger').append('</div>');
-                    //clear all fields
-                    $('#contactForm').trigger("reset");
+                
                 },
             })
         },
