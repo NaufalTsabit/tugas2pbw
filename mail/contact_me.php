@@ -16,9 +16,9 @@ $message = $_POST['message'];
 
 
 $servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "masukan";
+$username = "id4902563_tsabit";
+$password = "12345678";
+$dbname = "id4902563_masukan";
 
 
 $test = $_POST['name'];
