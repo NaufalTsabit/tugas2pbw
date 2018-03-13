@@ -9,16 +9,19 @@ if(empty($_POST['name'])  		||
 	echo "No arguments Provided!";
 	return false;
    }
-if (isset($_POST['submit'])) {	
+
 $name = $_POST["name"];
 $email_address = $_POST['email'];
 $message = $_POST['message'];
-}
-$servername = "localhost";
-$username = "id4902563_tsabit";
-$password = "12345678";
-$dbname = "id4902563_masukan";
 
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "masukan";
+
+
+$test = $_POST['name'];
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -27,8 +30,14 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "INSERT INTO Masukan (Name, Email, Comment) VALUES ('".$name."', '".$email_address."', '".$message."')";
-
+$sql = "INSERT INTO Masukan (Name, Email, Comment) 
+VALUES ('".$name."', '".$email_address."', '".$message."')";
+var_dump($test);
+if ($conn->query($sql) === TRUE) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
 $conn->close();
 
 // Create the email and send the message
