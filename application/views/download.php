@@ -1,8 +1,22 @@
-<?php
-  header("Content-type: application/vnd-ms-excel");
+<!DOCTYPE html>
+<html>
+<body>
+<?php 
+ header("Content-type: application/vnd-ms-excel");
   header("Content-Disposition: attachment; filename=hasil-export.xls");
-  foreach ($data as $data) { 
-    echo $data['Name'];
-    echo $data['Comment'];
-  }
 ?>
+<table>
+  <tr>
+    <th>Nama</th>
+    <th>Komentar</th>
+  </tr>
+  <?php foreach ($data as $data) { ?>
+  <tr>
+    <td><?php echo $data['Name'];?></td>
+    <td><?php echo $data['Comment'];?></td>
+  </tr>
+  <?php } ?>
+</table>
+
+</body>
+</html>
