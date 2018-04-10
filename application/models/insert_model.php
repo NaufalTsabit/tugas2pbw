@@ -4,8 +4,8 @@ class insert_model extends CI_Model {
 		parent::__construct();
 	}
 
-	function getData() {
-		$res = $this->db->get('komen');
+	function getData($table) {
+		$res = $this->db->get($table);
 		return $res->result_array();
 	}
 

@@ -67,6 +67,7 @@
           <li> <a class="page-scroll" href="#resume">Profil Lulusan</a> </li>
           <li> <a class="page-scroll" href="#achievements">Fasilitas</a> </li>
           <li> <a class="page-scroll" href="#contact">Contact</a> </li>
+          <li> <a class="page-scroll" href="<?php echo base_url()."index.php/Welcome/chart"?>">test</a></li>
         </ul>
       </div>
     </div>
@@ -283,6 +284,16 @@
     </div>
   </div>
 </div>
+<?php 
+  //header("Content-type: application/vnd-ms-excel");
+  //header("Content-Disposition: attachment; filename=hasil-export.xls");
+  foreach ($data as $data) { ?>
+  <a><b><?php echo $data['Name'];?></a></b><br>
+  <a><?php echo $data['Comment'];?></a>
+  <a><?php echo "<br>"?></a>
+  <a href='<?php echo base_url()."index.php/Welcome/delete/".$data['ID']; ?>'>Delete<br><br></a>
+<?php } ?>
+<a href='<?php echo base_url()."index.php/Welcome/click"; ?>'>Download</a>
 <div id="footer">
   <div class="container text-center">
     <div class="fnav">
@@ -345,11 +356,3 @@ body {
 </style>
 </body>
 </html>
-<?php foreach ($data as $data) { ?>
-  <a><?php echo $data['Name'];?></a>
-  <a><?php echo "<"?></a>
-  <a><?php echo $data['Comment'];?></a>
-  <a><?php echo "> "?></a>
-  <a><?php echo "<br>"?></a>
-  <a href='<?php echo base_url()."index.php/Welcome/delete/".$data['ID']; ?>'>Delete</a>
-<?php } ?>

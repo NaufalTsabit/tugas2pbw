@@ -21,12 +21,10 @@ class Welcome extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->helper('url');
-        $this->load->model('insert_model');
-        $this->load->model('update_model');
-        $this->load->model('delete_model');
+        $this->load->model(array('insert_model','update_model','delete_model','chart_model'));
     }
 	public function index() {
-		$data = $this->insert_model->getData();
+		$data = $this->insert_model->getData('komen');
 		$this->load->view('index', array('data' => $data));
 	}
 
@@ -49,9 +47,18 @@ class Welcome extends CI_Controller {
 			redirect(base_url());
 		}
 	}
-	public function update($id) {
-		$where array('ID'=>$id);
-		$result = $this->update_model->updateData('komen', $where);
-		
+	public function click () {
+		$data = $this->insert_model->getData('komen');
+		$this->load->view('download', array('data' => $data));
 	}
+	public function chart()
+    {
+        $data['report'] = $this->chart_model->report();
+        $this->load->view('chart', $data);
+    }
+	// public function update($id) {
+	// 	$where array('ID'=>$id);
+	// 	$result = $this->update_model->updateData('komen', $where);
+		
+	// }
 }
