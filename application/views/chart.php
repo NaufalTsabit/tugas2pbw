@@ -32,14 +32,14 @@ $(function () {
             }
         },
         title: {
-            text: 'Report Jan - Agustus',
+            text: 'Report Jan - Des',
             style: {
                     fontSize: '18px',
                     fontFamily: 'Verdana, sans-serif'
             }
         },
         subtitle: {
-           text: 'Penjualan',
+           text: 'Pengunjung',
            style: {
                     fontSize: '15px',
                     fontFamily: 'Verdana, sans-serif'
@@ -70,7 +70,7 @@ $(function () {
              }
           },
         series: [{
-            name: 'Report Data',
+            name: 'Jumlah Pengunjung',
             data: <?php echo json_encode($value);?>,
             shadow : true,
             dataLabels: {

@@ -67,7 +67,7 @@
           <li> <a class="page-scroll" href="#resume">Profil Lulusan</a> </li>
           <li> <a class="page-scroll" href="#achievements">Fasilitas</a> </li>
           <li> <a class="page-scroll" href="#contact">Contact</a> </li>
-          <li> <a class="page-scroll" href="<?php echo base_url()."index.php/Welcome/chart"?>">test</a></li>
+          <li> <a class="page-scroll" href="<?php echo base_url()."index.php/Welcome/chart"?>">Statistik</a></li>
         </ul>
       </div>
     </div>
